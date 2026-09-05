@@ -19,6 +19,8 @@ const LuaInterface<Archipelago>::MethodMap Archipelago::Lua_Methods = {
     LUA_METHOD(Archipelago, Get, json),
     LUA_METHOD(Archipelago, LocationChecks, json),
     LUA_METHOD(Archipelago, LocationScouts, json, int),
+    LUA_METHOD(Archipelago, HintItem, int),
+    LUA_METHOD(Archipelago, HintLocation, int),
     LUA_METHOD(Archipelago, StatusUpdate, int),
 
     LUA_METHOD(Archipelago, GetPlayerAlias, int),
@@ -303,6 +305,20 @@ bool Archipelago::LocationScouts(const json &jLocations, int sendAsHint)
         }
     }
     return _ap->LocationScouts(locations, sendAsHint);
+}
+
+bool Archipelago::HintItem(int id)
+{
+    if (!_ap)
+        return false;
+    return _ap->HintItem(id);
+}
+
+bool Archipelago::HintLocation(int id)
+{
+    if (!_ap)
+        return false;
+    return _ap->HintLocation(id);
 }
 
 bool Archipelago::StatusUpdate(int status)

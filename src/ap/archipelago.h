@@ -28,6 +28,8 @@ public:
     bool Get(const json& keys);
     bool LocationChecks(const json& locations);
     bool LocationScouts(const json& locations, int sendAsHint);
+    bool HintItem(int id);
+    bool HintLocation(int id);
     bool StatusUpdate(int status);
 
     std::string GetPlayerAlias(int slot);

@@ -358,6 +358,20 @@ public:
         return _ap->LocationScouts(locations, createAsHint);
     }
 
+    bool HintItem(int id)
+    {
+        if (!_ap)
+            return false;
+        return _ap->Say("!hint " + std::to_string(id));
+    }
+
+    bool HintLocation(int id)
+    {
+        if (!_ap)
+            return false;
+        return _ap->Say("!hint_location " + std::to_string(id));
+    }
+
     /// Returns true if sending a client status update to the server.
     /// This is used to send the goal / win condition.
     bool StatusUpdate(APClient::ClientStatus status)
