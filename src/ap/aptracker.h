@@ -358,18 +358,18 @@ public:
         return _ap->LocationScouts(locations, createAsHint);
     }
 
-    bool HintItem(int id)
+    bool HintItem(const std::string& item)
     {
         if (!_ap)
             return false;
-        return _ap->Say("!hint " + std::to_string(id));
+        return _ap->Say("!hint " + item);
     }
 
-    bool HintLocation(int id)
+    bool HintLocation(const std::string& location)
     {
         if (!_ap)
             return false;
-        return _ap->Say("!hint_location " + std::to_string(id));
+        return _ap->Say("!hint_location " + location);
     }
 
     /// Returns true if sending a client status update to the server.

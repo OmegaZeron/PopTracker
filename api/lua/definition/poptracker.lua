@@ -443,15 +443,17 @@ function Archipelago:LocationChecks(locations) end
 ---@return boolean true on success
 function Archipelago:LocationScouts(locations, sendAsHint) end
 
----Asks the server for an item hint
----@param id integer
+---Asks the server for an item hint.
+---Shortcut for using the !hint command.
+---@param item string either ID or name
 ---@return boolean true on success
-function Archipelago:HintItem(id) end
+function Archipelago:HintItem(item) end
 
----Asks the server for a location hint
----@param id integer
+---Asks the server for a location hint.
+---Shortcut for using the !hint_location command.
+---@param location string either ID or name
 ---@return boolean true on success
-function Archipelago:HintLocation(id) end
+function Archipelago:HintLocation(location) end
 
 ---Send client status to the server. This is used to send the goal / win condition.
 ---Supported since 0.27.1, only allowed if "apmanual" flag is set in manifest.
